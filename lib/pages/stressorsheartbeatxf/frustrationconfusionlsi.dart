@@ -1,4 +1,8 @@
+import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/perceptionsadnesswde/pessimismoptimismore.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FrustrationConfusionLsi extends StatefulWidget {
@@ -9,6 +13,7 @@ class FrustrationConfusionLsi extends StatefulWidget {
 }
 
 class _FrustrationConfusionLsi extends State<FrustrationConfusionLsi> {
+  int _prehensixing = 1;
   @override
   void dispose() {
     super.dispose();
@@ -116,253 +121,166 @@ class _FrustrationConfusionLsi extends State<FrustrationConfusionLsi> {
                     Opacity(opacity: 0.0, child: SizedBox(height: 16)),
                     Row(
                       children: [
-                        SizedBox(
-                          width: 147,
-                          height: 40,
-                          child: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                              Image.asset(
-                                'assets/images/oiznxciiffe_annyi.png',
-                                fit: BoxFit.fill,
-                              ),
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 5),
-                                  child: Text(
-                                    'Received letter',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                        GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {
+                            setState(() {
+                              _prehensixing = 1;
+                            });
+                          },
+                          child: SizedBox(
+                            width: 147,
+                            height: 40,
+                            child: Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                Image.asset(
+                                  _prehensixing == 1
+                                      ? 'assets/images/oiznxciiffe_annyi.png'
+                                      : 'assets/images/nviuwhfuqa_anbei.png',
+                                  fit: BoxFit.fill,
+                                ),
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 5),
+                                    child: Text(
+                                      'Received letter',
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                         Opacity(opacity: 0.0, child: SizedBox(width: 24)),
-                        SizedBox(
-                          width: 147,
-                          height: 40,
-                          child: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                              Image.asset(
-                                'assets/images/nviuwhfuqa_anbei.png',
-                                fit: BoxFit.fill,
-                              ),
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 5),
-                                  child: Text(
-                                    'Letter sent',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white,
+                        GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {
+                            setState(() {
+                              _prehensixing = 2;
+                            });
+                          },
+                          child: SizedBox(
+                            width: 147,
+                            height: 40,
+                            child: Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                Image.asset(
+                                  _prehensixing == 2
+                                      ? 'assets/images/oiznxciiffe_annyi.png'
+                                      : 'assets/images/nviuwhfuqa_anbei.png',
+                                  fit: BoxFit.fill,
+                                ),
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 5),
+                                    child: Text(
+                                      'Letter sent',
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ],
                     ),
                     Opacity(opacity: 0.0, child: SizedBox(height: 20)),
                     Expanded(
-                      child: ListView.separated(
-                        separatorBuilder: (context, index) =>
-                            Opacity(opacity: 0.0, child: SizedBox(height: 20)),
-                        itemCount: 2,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            width: 335,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  Color(0xff1100ff),
-                                  Color(0xff0cdefa),
-                                  Color(0xff94ff08),
-                                  Color(0xffffe100),
-                                  Color(0xffff8800),
-                                  Color(0xffff0000),
-                                ],
-                                begin: AlignmentDirectional(1, 1),
-                                end: AlignmentDirectional(-1, -1),
-                              ),
-                              borderRadius: BorderRadius.circular(20),
+                      child: Builder(
+                        builder: (context) {
+                          final disescapej = WitbanTer().fantasydreamxfen
+                              .where((emoco) {
+                                if (_prehensixing == 1) {
+                                  return emoco["imaginationinfo"][3].contains(
+                                    WitbanTer().rabilitycelogid,
+                                  );
+                                } else {
+                                  return emoco["imaginationinfo"][0] ==
+                                      WitbanTer().rabilitycelogid;
+                                }
+                              })
+                              .toList()
+                              .reversed
+                              .toList();
+                          return ListView.separated(
+                            separatorBuilder: (context, index) => Opacity(
+                              opacity: 0.0,
+                              child: SizedBox(height: 20),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    width: MediaQuery.sizeOf(context).width,
-                                    height: 195,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffffffff),
-                                      borderRadius: BorderRadius.circular(18),
-                                    ),
-                                    child: Flex(
-                                      direction: Axis.horizontal,
-                                      children: [
-                                        SizedBox(
-                                          width: 153.9,
-                                          height: 195,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadiusGeometry.circular(
-                                                  18,
-                                                ),
-                                            child: Image.asset(
-                                              'assets/images/asndilogo.png',
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ),
+                            itemCount: disescapej.length,
+                            itemBuilder: (context, index) {
+                              final ishdesire = getClardisgustUinfo(
+                                disescapej[index]["imaginationinfo"][0],
+                              );
 
-                                        Flexible(
-                                          child: Padding(
-                                            padding: const EdgeInsets.fromLTRB(
-                                              14,
-                                              17,
-                                              15,
-                                              13,
-                                            ),
-                                            child: Flex(
-                                              direction: Axis.vertical,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Login LoginLoginLoginLoginLooginLoginLoginLoginLoginLoginLogin',
-                                                  style: GoogleFonts.poppins(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Color(0xff000000),
-                                                  ),
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    Container(
-                                                      width: 49,
-                                                      height: 49,
-                                                      decoration: BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                        border: Border.all(
-                                                          color: Color(
-                                                            0xffFC8AFF,
-                                                          ),
-                                                          width: 2,
-                                                        ),
-                                                      ),
-                                                      child: CircleAvatar(
-                                                        backgroundImage: AssetImage(
-                                                          'assets/images/asndilogo.png',
-                                                        ),
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '    Athos',
-                                                      style:
-                                                          GoogleFonts.playfairDisplay(
-                                                            fontSize: 18,
-                                                            fontWeight:
-                                                                FontWeight.w700,
-                                                            color: Color(
-                                                              0xff57228c,
-                                                            ),
-                                                          ),
-                                                    ),
-                                                    Expanded(
-                                                      child: SizedBox.shrink(),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 25,
-                                                      height: 25,
-                                                      child: CircleAvatar(
-                                                        backgroundImage: AssetImage(
-                                                          'assets/images/owinfiuaq_jbao.png',
-                                                        ),
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                              return Container(
+                                width: 335,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xff1100ff),
+                                      Color(0xff0cdefa),
+                                      Color(0xff94ff08),
+                                      Color(0xffffe100),
+                                      Color(0xffff8800),
+                                      Color(0xffff0000),
+                                    ],
+                                    begin: AlignmentDirectional(1, 1),
+                                    end: AlignmentDirectional(-1, -1),
                                   ),
-
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 5,
-                                      vertical: 5,
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Opacity(
-                                          opacity: 0.0,
-                                          child: SizedBox(height: 18),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: 20,
-                                          ),
-                                          child: Container(
-                                            width: MediaQuery.sizeOf(
-                                              context,
-                                            ).width,
-                                            height: 1,
-                                            color: Color(
-                                              0xff000000,
-                                            ).withOpacity(0.7),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: MediaQuery.sizeOf(context).width,
+                                        height: 195,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffffffff),
+                                          borderRadius: BorderRadius.circular(
+                                            18,
                                           ),
                                         ),
-                                        Opacity(
-                                          opacity: 0.0,
-                                          child: SizedBox(height: 26),
-                                        ),
-                                        Container(
-                                          width: MediaQuery.sizeOf(
-                                            context,
-                                          ).width,
-                                          height: 218,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xfffff4d9),
-                                            borderRadius: BorderRadius.circular(
-                                              20,
-                                            ),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Color(
-                                                  0xff000000,
-                                                ).withOpacity(0.25),
-                                                spreadRadius: 0,
-                                                blurRadius: 4,
-                                                offset: Offset(0, 2),
+                                        child: Flex(
+                                          direction: Axis.horizontal,
+                                          children: [
+                                            SizedBox(
+                                              width: 153.9,
+                                              height: 195,
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadiusGeometry.circular(
+                                                      18,
+                                                    ),
+                                                child: Image.asset(
+                                                  disescapej[index]["imaginationinfo"][1],
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
-                                            ],
-                                          ),
-                                          child: Stack(
-                                            children: [
-                                              Padding(
+                                            ),
+
+                                            Flexible(
+                                              child: Padding(
                                                 padding:
                                                     const EdgeInsets.fromLTRB(
                                                       14,
-                                                      31,
-                                                      14,
-                                                      14,
+                                                      17,
+                                                      15,
+                                                      13,
                                                     ),
                                                 child: Flex(
                                                   direction: Axis.vertical,
@@ -371,17 +289,19 @@ class _FrustrationConfusionLsi extends State<FrustrationConfusionLsi> {
                                                           .spaceBetween,
                                                   children: [
                                                     Text(
-                                                      'I’m here, if you ever want to trade stories about street-corner lights, unanswered texts, or the weight of words left unsaid.  Sometimes it helps to share the load, even if just a little.',
+                                                      maxLines: 5,
+                                                      disescapej[index]["larambiguitymes"],
                                                       style:
-                                                          GoogleFonts.raleway(
+                                                          GoogleFonts.poppins(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                             color: Color(
-                                                              0xFF000000,
+                                                              0xff000000,
                                                             ),
                                                           ),
                                                     ),
+                                                     if(ishdesire[0]!=WitbanTer().rabilitycelogid)
                                                     Row(
                                                       children: [
                                                         Container(
@@ -401,7 +321,7 @@ class _FrustrationConfusionLsi extends State<FrustrationConfusionLsi> {
                                                           child: CircleAvatar(
                                                             backgroundImage:
                                                                 AssetImage(
-                                                                  'assets/images/asndilogo.png',
+                                                                  ishdesire[1],
                                                                 ),
                                                             backgroundColor:
                                                                 Colors
@@ -409,7 +329,7 @@ class _FrustrationConfusionLsi extends State<FrustrationConfusionLsi> {
                                                           ),
                                                         ),
                                                         Text(
-                                                          '    Athos',
+                                                          '  ${ishdesire[2]}',
                                                           style:
                                                               GoogleFonts.playfairDisplay(
                                                                 fontSize: 18,
@@ -425,17 +345,31 @@ class _FrustrationConfusionLsi extends State<FrustrationConfusionLsi> {
                                                           child:
                                                               SizedBox.shrink(),
                                                         ),
-                                                        SizedBox(
-                                                          width: 25,
-                                                          height: 25,
-                                                          child: CircleAvatar(
-                                                            backgroundImage:
-                                                                AssetImage(
-                                                                  'assets/images/owinfiuaq_jbao.png',
-                                                                ),
-                                                            backgroundColor:
-                                                                Colors
-                                                                    .transparent,
+                                                       
+                                                        GestureDetector(
+                                                          behavior:
+                                                              HitTestBehavior
+                                                                  .translucent,
+                                                          onTap: () {
+                                                            Get.dialog(
+                                                              PessimismOptimisMore(
+                                                                nostalgiauid:
+                                                                    ishdesire[0],
+                                                              ),
+                                                            );
+                                                          },
+                                                          child: SizedBox(
+                                                            width: 25,
+                                                            height: 25,
+                                                            child: CircleAvatar(
+                                                              backgroundImage:
+                                                                  AssetImage(
+                                                                    'assets/images/owinfiuaq_jbao.png',
+                                                                  ),
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                            ),
                                                           ),
                                                         ),
                                                       ],
@@ -443,42 +377,221 @@ class _FrustrationConfusionLsi extends State<FrustrationConfusionLsi> {
                                                   ],
                                                 ),
                                               ),
-                                              Transform.translate(
-                                                offset: Offset(14, -15),
-                                                child: Container(
-                                                  width: 73,
-                                                  height: 36,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                          10,
-                                                        ),
-                                                    color: Color(0xffffffff),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      if (_prehensixing == 2 &&
+                                          disescapej[index]["imaginationinfo"][2]
+                                              .isNotEmpty)
+                                        Builder(
+                                          builder: (context) {
+                                            final judgmentu = getClardisgustUinfo(
+                                              disescapej[index]["imaginationinfo"][2][0]["guiltametyuid"],
+                                            );
+                                            return Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                    horizontal: 5,
+                                                    vertical: 5,
                                                   ),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Reply',
-                                                    style:
-                                                        GoogleFonts.playfairDisplay(
-                                                          fontSize: 18,
-                                                          fontWeight:
-                                                              FontWeight.w700,
+                                              child: Column(
+                                                children: [
+                                                  Opacity(
+                                                    opacity: 0.0,
+                                                    child: SizedBox(height: 18),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.symmetric(
+                                                          horizontal: 20,
+                                                        ),
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                        context,
+                                                      ).width,
+                                                      height: 1,
+                                                      color: Color(
+                                                        0xff000000,
+                                                      ).withOpacity(0.7),
+                                                    ),
+                                                  ),
+                                                  Opacity(
+                                                    opacity: 0.0,
+                                                    child: SizedBox(height: 26),
+                                                  ),
+                                                  Container(
+                                                    width: MediaQuery.sizeOf(
+                                                      context,
+                                                    ).width,
+                                                    height: 218,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0xfffff4d9),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            20,
+                                                          ),
+                                                      boxShadow: [
+                                                        BoxShadow(
                                                           color: Color(
-                                                            0xff57228c,
+                                                            0xff000000,
+                                                          ).withOpacity(0.25),
+                                                          spreadRadius: 0,
+                                                          blurRadius: 4,
+                                                          offset: Offset(0, 2),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    child: Stack(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets.fromLTRB(
+                                                                14,
+                                                                31,
+                                                                14,
+                                                                14,
+                                                              ),
+                                                          child: Flex(
+                                                            direction:
+                                                                Axis.vertical,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Text(
+                                                                disescapej[index]["imaginationinfo"][2][0]["loentancegytxt"],
+                                                                style: GoogleFonts.raleway(
+                                                                  fontSize: 14,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400,
+                                                                  color: Color(
+                                                                    0xFF000000,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Row(
+                                                                children: [
+                                                                  Container(
+                                                                    width: 49,
+                                                                    height: 49,
+                                                                    decoration: BoxDecoration(
+                                                                      shape: BoxShape
+                                                                          .circle,
+                                                                      border: Border.all(
+                                                                        color: Color(
+                                                                          0xffFC8AFF,
+                                                                        ),
+                                                                        width:
+                                                                            2,
+                                                                      ),
+                                                                    ),
+                                                                    child: CircleAvatar(
+                                                                      backgroundImage:
+                                                                          AssetImage(
+                                                                            judgmentu[1],
+                                                                          ),
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                    ),
+                                                                  ),
+                                                                  Text(
+                                                                    '    ${judgmentu[2]}',
+                                                                    style: GoogleFonts.playfairDisplay(
+                                                                      fontSize:
+                                                                          18,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w700,
+                                                                      color: Color(
+                                                                        0xff57228c,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        SizedBox.shrink(),
+                                                                  ),
+                                                                  GestureDetector(
+                                                                    behavior:
+                                                                        HitTestBehavior
+                                                                            .translucent,
+                                                                    onTap: () {
+                                                                      Get.dialog(
+                                                                        PessimismOptimisMore(
+                                                                          nostalgiauid:
+                                                                              judgmentu[0],
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                    child: SizedBox(
+                                                                      width: 25,
+                                                                      height:
+                                                                          25,
+                                                                      child: CircleAvatar(
+                                                                        backgroundImage:
+                                                                            AssetImage(
+                                                                              'assets/images/owinfiuaq_jbao.png',
+                                                                            ),
+                                                                        backgroundColor:
+                                                                            Colors.transparent,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ],
                                                           ),
                                                         ),
+                                                        Transform.translate(
+                                                          offset: Offset(
+                                                            14,
+                                                            -15,
+                                                          ),
+                                                          child: Container(
+                                                            width: 73,
+                                                            height: 36,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                  borderRadius:
+                                                                      BorderRadius.circular(
+                                                                        10,
+                                                                      ),
+                                                                  color: Color(
+                                                                    0xffffffff,
+                                                                  ),
+                                                                ),
+                                                            alignment: Alignment
+                                                                .center,
+                                                            child: Text(
+                                                              'Reply',
+                                                              style: GoogleFonts.playfairDisplay(
+                                                                fontSize: 18,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w700,
+                                                                color: Color(
+                                                                  0xff57228c,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
+                                                ],
                                               ),
-                                            ],
-                                          ),
+                                            );
+                                          },
                                         ),
-                                      ],
-                                    ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                            ),
+                                ),
+                              );
+                            },
                           );
                         },
                       ),

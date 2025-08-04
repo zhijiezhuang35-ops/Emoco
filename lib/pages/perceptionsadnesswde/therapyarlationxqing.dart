@@ -1,3 +1,5 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,6 +12,8 @@ class TherapyarLationXqing extends StatefulWidget {
 
 class _TherapyarLationXqing extends State<TherapyarLationXqing> {
   final TextEditingController _dialoguexin = TextEditingController();
+  String _trictionben = '';
+
   @override
   void dispose() {
     super.dispose();
@@ -53,35 +57,41 @@ class _TherapyarLationXqing extends State<TherapyarLationXqing> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
-                          width: 38,
-                          height: 38,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Color(0xfffff635),
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Color(0xffffffff),
-                                    width: 3,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffffcc18),
-
-                                      offset: Offset(0, 3),
+                        GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: SizedBox(
+                            width: 38,
+                            height: 38,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(0xfffff635),
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Color(0xffffffff),
+                                      width: 3,
                                     ),
-                                  ],
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Color(0xffffcc18),
+
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Image.asset(
-                                'assets/images/oinuibeuback.png',
-                                width: 22.45,
-                                height: 21.59,
-                              ),
-                            ],
+                                Image.asset(
+                                  'assets/images/oinuibeuback.png',
+                                  width: 22.45,
+                                  height: 21.59,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -154,48 +164,88 @@ class _TherapyarLationXqing extends State<TherapyarLationXqing> {
                             ),
                           ),
                           Opacity(opacity: 0.0, child: SizedBox(height: 28)),
-                                Center(
-                      child: Container(
-                        width: 187,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color(0xffffffff),
-                            width: 2,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color(0xff000000).withOpacity(0.15),
-                              spreadRadius: 0,
-                              blurRadius: 0,
-                              offset: Offset(0, 3),
+                          Center(
+                            child: GestureDetector(
+                              behavior: HitTestBehavior.translucent,
+                              onTap: () async {
+                                if (_dialoguexin.text != '' &&
+                                    _trictionben != '') {
+                                  await anggrowthelod();
+                                  ScaffoldMessenger.of(
+                                    context,
+                                  ).clearSnackBars();
+                                  final snackBar = SnackBar(
+                                    duration: const Duration(
+                                      milliseconds: 2999,
+                                    ),
+                                    content: AwesomeSnackbarContent(
+                                      title: 'Success',
+                                      message:
+                                          'Thanks for your valuable feedback — we take it seriously and will follow up.',
+                                      contentType: ContentType.success,
+                                    ),
+                                    backgroundColor: Colors.transparent,
+                                    elevation: 0,
+                                    behavior: SnackBarBehavior.floating,
+                                    margin: const EdgeInsets.only(
+                                      bottom: 80,
+                                      left: 16,
+                                      right: 16,
+                                    ),
+                                  );
+
+                                  ScaffoldMessenger.of(
+                                    context,
+                                  ).showSnackBar(snackBar);
+
+
+                                  Navigator.pop(context);
+                                }
+                              },
+                              child: Container(
+                                width: 187,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Color(0xffffffff),
+                                    width: 2,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(
+                                        0xff000000,
+                                      ).withOpacity(0.15),
+                                      spreadRadius: 0,
+                                      blurRadius: 0,
+                                      offset: Offset(0, 3),
+                                    ),
+                                  ],
+                                  borderRadius: BorderRadius.circular(27),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xff1100ff),
+                                      Color(0xff0cdefa),
+                                      Color(0xff94ff08),
+                                      Color(0xffffe100),
+                                      Color(0xffff8800),
+                                      Color(0xffff0000),
+                                    ],
+                                    begin: AlignmentDirectional(1, 1),
+                                    end: AlignmentDirectional(-1, -1),
+                                  ),
+                                ),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Submit',
+                                  style: GoogleFonts.playfairDisplay(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w900,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
+                              ),
                             ),
-                          ],
-                          borderRadius: BorderRadius.circular(27),
-                          gradient: LinearGradient(
-                            colors: [
-                              Color(0xff1100ff),
-                              Color(0xff0cdefa),
-                              Color(0xff94ff08),
-                              Color(0xffffe100),
-                              Color(0xffff8800),
-                              Color(0xffff0000),
-                            ],
-                            begin: AlignmentDirectional(1, 1),
-                            end: AlignmentDirectional(-1, -1),
                           ),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Submit',
-                          style: GoogleFonts.playfairDisplay(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w900,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                      ),
-                    ),
                         ],
                       ),
                     ),
@@ -212,21 +262,31 @@ class _TherapyarLationXqing extends State<TherapyarLationXqing> {
   Widget _textmemo(emoco) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
-      child: Container(
-        width: MediaQuery.sizeOf(context).width,
-        height: 47,
-        decoration: BoxDecoration(
-          border: Border.all(color: Color(0xffFC8AFF)),
-          color: Color(0xffffffff).withOpacity(0.2),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        alignment: Alignment.center,
-        child: Text(
-          emoco,
-          style: GoogleFonts.poppins(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            color: Color(0xff000000),
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () {
+          setState(() {
+            _trictionben = emoco;
+          });
+        },
+        child: Container(
+          width: MediaQuery.sizeOf(context).width,
+          height: 47,
+          decoration: BoxDecoration(
+            border: Border.all(color: Color(0xffFC8AFF)),
+            color: _trictionben == emoco
+                ? Color(0xffFC8AFF)
+                : Color(0xffffffff).withOpacity(0.2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            emoco,
+            style: GoogleFonts.poppins(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Color(0xff000000),
+            ),
           ),
         ),
       ),

@@ -1,5 +1,12 @@
+import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/feelingpassionksi/projectionwithdrawalxyi.dart';
+import 'package:emoco/pages/feelingpassionksi/statempertemotionzche.dart';
+import 'package:emoco/pages/feelingpassionksi/thoughtreflectiondlu.dart';
+import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InterpretationMindsetyDao extends StatefulWidget {
@@ -44,7 +51,7 @@ class _InterpretationMindsetyDao extends State<InterpretationMindsetyDao> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 27,left: 37),
+                      padding: const EdgeInsets.only(top: 27, left: 37),
                       child: Container(
                         width: 70,
                         height: 70,
@@ -68,77 +75,120 @@ class _InterpretationMindsetyDao extends State<InterpretationMindsetyDao> {
                 Flex(
                   direction: Axis.vertical,
                   children: [
-                    SizedBox(
-                      width: 262,
-                      height: 62,
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: [
-                          Image.asset(
-                            'assets/images/anniuyi.png',
-                            fit: BoxFit.fill,
-                          ),
-                          Center(
-                            child: Text(
-                              'Login by email',
-                              style: GoogleFonts.poppins(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
+                    GestureDetector(
+                      behavior: HitTestBehavior.translucent,
+                      onTap: () async {
+                        if (_affectionw) {
+                          Get.to(ThoughtReflectionDlu());
+                        } else {
+                          showeLingexproMes(
+                            context,
+                            'Please agree to the agreement first',
+                          );
+                        }
+                      },
+                      child: SizedBox(
+                        width: 262,
+                        height: 62,
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            Image.asset(
+                              'assets/images/anniuyi.png',
+                              fit: BoxFit.fill,
+                            ),
+                            Center(
+                              child: Text(
+                                'Login by email',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     Opacity(opacity: 0.0, child: SizedBox(height: 28)),
-                    SizedBox(
-                      width: 262,
-                      height: 62,
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: [
-                          Image.asset(
-                            'assets/images/anniuyi.png',
-                            fit: BoxFit.fill,
-                          ),
-                          Center(
-                            child: Text(
-                              "I'm new",
-                              style: GoogleFonts.poppins(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
+                    GestureDetector(
+                      behavior: HitTestBehavior.translucent,
+                      onTap: () async {
+                        if (_affectionw) {
+                          await anggrowthelod();
+                          WitbanTer().rabilitycelogid = 7;
+
+                          Get.to(DespairjEalousyZye());
+                        } else {
+                          showeLingexproMes(
+                            context,
+                            'Please agree to the agreement first',
+                          );
+                        }
+                      },
+                      child: SizedBox(
+                        width: 262,
+                        height: 62,
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            Image.asset(
+                              'assets/images/anniuyi.png',
+                              fit: BoxFit.fill,
+                            ),
+                            Center(
+                              child: Text(
+                                "I'm new",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     Opacity(opacity: 0.0, child: SizedBox(height: 20)),
-                    RichText(
-                      text: TextSpan(
-                        style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          color: Colors.black,
+                    GestureDetector(
+                      behavior: HitTestBehavior.translucent,
+                      onTap: ()  {
+                         if (_affectionw) {
+                          Get.to(StatempertEmotionZche());
+                        } else {
+                          showeLingexproMes(
+                            context,
+                            'Please agree to the agreement first',
+                          );
+                        }
+                      
+                      },
+                      child: RichText(
+                        text: TextSpan(
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: Colors.black,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: "Don't have an account? ",
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            TextSpan(
+                              text: "Sign up",
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w900,
+                                color: Color(0xffFFE549),
+                                decoration: TextDecoration.underline,
+                              ),
+                              recognizer: TapGestureRecognizer()..onTap = () {},
+                            ),
+                          ],
                         ),
-                        children: [
-                          TextSpan(
-                            text: "Don't have an account? ",
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          TextSpan(
-                            text: "Sign up",
-                            style: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w900,
-                              color: Color(0xffFFE549),
-                              decoration: TextDecoration.underline
-                            ),
-                            recognizer: TapGestureRecognizer()..onTap = () {},
-                          ),
-                        ],
                       ),
                     ),
 
@@ -173,7 +223,14 @@ class _InterpretationMindsetyDao extends State<InterpretationMindsetyDao> {
                                     color: const Color(0xffFFE549),
                                   ),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {},
+                                    ..onTap = () {
+                                      Get.to(
+                                        ProjectionwUthdrawalXyi(
+                                          lohopevezhi:
+                                              'https://app.umraz45p.link/users',
+                                        ),
+                                      );
+                                    },
                                 ),
                                 const TextSpan(text: ' and '),
                                 TextSpan(
@@ -183,7 +240,14 @@ class _InterpretationMindsetyDao extends State<InterpretationMindsetyDao> {
                                     color: const Color(0xffFFE549),
                                   ),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {},
+                                    ..onTap = () {
+                                      Get.to(
+                                        ProjectionwUthdrawalXyi(
+                                          lohopevezhi:
+                                              'https://app.umraz45p.link/privacy',
+                                        ),
+                                      );
+                                    },
                                 ),
                               ],
                             ),

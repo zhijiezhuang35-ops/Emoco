@@ -1,4 +1,8 @@
+import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StatempertEmotionZche extends StatefulWidget {
@@ -270,30 +274,94 @@ class _StatempertEmotionZche extends State<StatempertEmotionZche> {
                         Opacity(opacity: 0.0, child: SizedBox(height: 58)),
 
                         Center(
-                          child: SizedBox(
-                            width: 262,
-                            height: 62,
-                            child: Stack(
-                              fit: StackFit.expand,
-                              children: [
-                                Image.asset(
-                                  'assets/images/anniuyi.png',
-                                  fit: BoxFit.fill,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 6),
-                                  child: Center(
-                                    child: Text(
-                                      'Sign up',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
+                          child: GestureDetector(
+                            behavior: HitTestBehavior.translucent,
+                            onTap: () async {
+                              if (_agitationmma.text == '' ||
+                                  _disgustressst.text == '' ||
+                                  _fesurprisearzci.text == '') {
+                                return;
+                              }
+
+                              await anggrowthelod();
+
+                              for (var mreindi
+                                  in WitbanTer().cryismilengusers) {
+                                if (mreindi["deniaclarityluid"] == 8) {
+                                  mreindi["tiounicatiyxiang"] =
+                                      _disgustressst.text;
+                                  mreindi["ponsechologmedmi"] =
+                                      _agitationmma.text;
+
+                                  WitbanTer().cryismilengusers =
+                                      WitbanTer().cryismilengusers;
+                                  break;
+                                }
+                              }
+
+                               for (
+                                int i = 0;
+                                i < WitbanTer().olatisupportinfo.length;
+                                i++
+                              ) {
+                                if (WitbanTer()
+                                        .olatisupportinfo[i]["mindfulnesuinfo"][0] ==
+                                    8) {
+                                  WitbanTer().olatisupportinfo[i] = {
+                                    "mindfulnesuinfo": [
+                                      8,
+                                      "assets/images/asndilogo.png",
+                                      "Emoco",
+                                      0,
+                                      [],
+                                      [],
+                                      [],
+                                      1,
+                                    ],
+                                  };
+
+                                  WitbanTer().conversationtiezi =
+                                      WitbanTer().conversationtiezi;
+
+                                  break;
+                                }
+                              }
+
+
+
+
+
+
+
+                              WitbanTer().rabilitycelogid = 8;
+
+                              Get.to(DespairjEalousyZye());
+                            },
+                            child: SizedBox(
+                              width: 262,
+                              height: 62,
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/anniuyi.png',
+                                    fit: BoxFit.fill,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 6),
+                                    child: Center(
+                                      child: Text(
+                                        'Sign up',
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),

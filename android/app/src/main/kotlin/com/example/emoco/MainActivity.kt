@@ -1,4 +1,4 @@
-package com.example.emoco
+package com.reaction.emoco
 
 import io.flutter.embedding.android.FlutterActivity
 

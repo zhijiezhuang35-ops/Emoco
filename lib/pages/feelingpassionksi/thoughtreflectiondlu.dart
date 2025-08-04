@@ -1,4 +1,9 @@
+import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/feelingpassionksi/happinesexcitementwji.dart';
+import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ThoughtReflectionDlu extends StatefulWidget {
@@ -242,12 +247,18 @@ class _ThoughtReflectionDlu extends State<ThoughtReflectionDlu> {
                                   opacity: 0.0,
                                   child: SizedBox(height: 20),
                                 ),
-                                Text(
-                                  'FORGOT?',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xffFFE549),
+                                GestureDetector(
+                                  behavior: HitTestBehavior.translucent,
+                                  onTap: () {
+                                    Get.to(GappinesexCtementWji());
+                                  },
+                                  child: Text(
+                                    'FORGOT?',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xffFFE549),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -257,30 +268,55 @@ class _ThoughtReflectionDlu extends State<ThoughtReflectionDlu> {
                         Opacity(opacity: 0.0, child: SizedBox(height: 58)),
 
                         Center(
-                          child: SizedBox(
-                            width: 262,
-                            height: 62,
-                            child: Stack(
-                              fit: StackFit.expand,
-                              children: [
-                                Image.asset(
-                                  'assets/images/anniuyi.png',
-                                  fit: BoxFit.fill,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 6),
-                                  child: Center(
-                                    child: Text(
-                                      'Sign in',
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
+                          child: GestureDetector(
+                            behavior: HitTestBehavior.translucent,
+                            onTap: () async {
+                              await anggrowthelod();
+                              final laughteru = WitbanTer().cryismilengusers
+                                  .where(
+                                    (emoco) =>
+                                        emoco["tiounicatiyxiang"] ==
+                                            _sentimentyxiang.text &&
+                                        emoco["ponsechologmedmi"] ==
+                                            _vibetonemma.text,
+                                  );
+
+                              if (laughteru.isNotEmpty) {
+                                WitbanTer().rabilitycelogid =
+                                    laughteru.first["deniaclarityluid"];
+                                Get.to(DespairjEalousyZye());
+                              } else {
+                                showeLingexproMes(
+                                  context,
+                                  'Kindly double-check your email or password for any errors.',
+                                );
+                              }
+                            },
+                            child: SizedBox(
+                              width: 262,
+                              height: 62,
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/anniuyi.png',
+                                    fit: BoxFit.fill,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 6),
+                                    child: Center(
+                                      child: Text(
+                                        'Sign in',
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),

@@ -1,7 +1,7 @@
 name: emoco
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0
+version: 1.0.0+1
 
 environment:
   sdk: ^3.8.1
@@ -11,11 +11,40 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: 6.2.1
+  get: ^4.6.6
+  flutter_inappwebview: 6.1.5
+  awesome_snackbar_content: 0.1.7
+  flutter_spinkit: 5.2.1
+  shared_preferences: 2.5.3
+  flutter_launcher_icons: 0.14.2
+  flutter_native_splash: 2.4.3
+  video_player: 2.10.0
+  image_picker: 1.1.2
+  video_thumbnail: 0.5.6
+  path_provider: 2.1.5
+  permission_handler: 12.0.1
+  intl: 0.20.2
+  audioplayers: 6.5.0
+  record: 6.0.0
+  uuid: ^4.3.1
+  in_app_purchase: 3.2.0
+  auto_animated: 3.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+
+flutter_launcher_icons:
+  android: truedevicelocale
+  ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+  image_path: "assets/images/asndilogo.png"
+
+flutter_native_splash: 
+  background_image: "assets/images/qiwnduiadf_start.png"
 
 
 flutter:

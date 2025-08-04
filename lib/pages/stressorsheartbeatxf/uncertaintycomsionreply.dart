@@ -1,3 +1,5 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,6 +12,7 @@ class UncertaintyComsionReply extends StatefulWidget {
 
 class _UncertaintyComsionReply extends State<UncertaintyComsionReply> {
   final TextEditingController _pridedoubtx = TextEditingController();
+
   @override
   void dispose() {
     super.dispose();
@@ -112,7 +115,6 @@ class _UncertaintyComsionReply extends State<UncertaintyComsionReply> {
                             ),
                           ),
                         ),
-                       
                       ],
                     ),
                     Opacity(opacity: 0.0, child: SizedBox(height: 20)),
@@ -168,8 +170,6 @@ class _UncertaintyComsionReply extends State<UncertaintyComsionReply> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                       
-
                                         Expanded(
                                           child: Stack(
                                             children: [
@@ -210,7 +210,6 @@ class _UncertaintyComsionReply extends State<UncertaintyComsionReply> {
                                           ),
                                         ),
 
-                                      
                                         Opacity(
                                           opacity: 0.0,
                                           child: SizedBox(height: 200),
@@ -240,13 +239,45 @@ class _UncertaintyComsionReply extends State<UncertaintyComsionReply> {
                                 padding: const EdgeInsets.only(right: 7.3),
                                 child: Align(
                                   alignment: Alignment.bottomRight,
-                                  child: SizedBox(
-                                    width: 135,
-                                    height: 135,
-                                    child: ClipRRect(
-                                      child: Image.asset(
-                                        'assets/images/cxzncidisa_send.png',
-                                        fit: BoxFit.fill,
+                                  child: GestureDetector(
+                                    behavior: HitTestBehavior.translucent,
+                                    onTap: () async {
+                                      if (_pridedoubtx.text != '') {
+                                        await anggrowthelod();
+
+                                        ScaffoldMessenger.of(
+                                          context,
+                                        ).clearSnackBars();
+                                        final ulaareneti = SnackBar(
+                                          duration: const Duration(
+                                            milliseconds: 3500,
+                                          ),
+                                          content: AwesomeSnackbarContent(
+                                            title: 'Hint',
+                                            message:
+                                                "Reply upload successful! Just hang tight while we finish the review",
+                                            contentType: ContentType.success,
+                                          ),
+                                          backgroundColor: Colors.transparent,
+                                          elevation: 0,
+                                          behavior: SnackBarBehavior.floating,
+                                        );
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(ulaareneti)
+                                            .closed
+                                           ;
+
+                                        Navigator.pop(context);
+                                      }
+                                    },
+                                    child: SizedBox(
+                                      width: 135,
+                                      height: 135,
+                                      child: ClipRRect(
+                                        child: Image.asset(
+                                          'assets/images/cxzncidisa_send.png',
+                                          fit: BoxFit.fill,
+                                        ),
                                       ),
                                     ),
                                   ),

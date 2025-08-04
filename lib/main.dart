@@ -1,9 +1,20 @@
-import 'package:emoco/pages/feelingpassionksi/projectionwithdrawalxyi.dart';
-
+import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/feelingpassionksi/interpretationmindsetydao.dart';
+import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
+import 'package:emoco/toneletterutil.dart/triggervenloding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+  final appState = WitbanTer();
+  await appState.imangllegdriveeinit();
+
+  runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    navigatorKey: TriggerVenLoding.navigatorKey,
+    home: const MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -11,8 +22,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ProjectionwUthdrawalXyi(),
+     SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+    return  MaterialApp(
+      home: WitbanTer().rabilitycelogid==-1? InterpretationMindsetyDao():DespairjEalousyZye(),
     );
   }
 }

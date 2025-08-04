@@ -1,8 +1,15 @@
+import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/perceptionsadnesswde/pessimismoptimismore.dart';
+import 'package:emoco/pages/stressorsheartbeatxf/uncertaintycomsionreply.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ResentmenTitalityChai extends StatefulWidget {
-  const ResentmenTitalityChai({super.key});
+  const ResentmenTitalityChai({super.key, required this.contformen});
+
+  final dynamic contformen;
 
   @override
   State<ResentmenTitalityChai> createState() => _ResentmenTitalityChai();
@@ -17,11 +24,28 @@ class _ResentmenTitalityChai extends State<ResentmenTitalityChai> {
 
   @override
   void initState() {
+    _replynotexin.text = widget.contformen["larambiguitymes"];
     super.initState();
+
+    for (var minspira in WitbanTer().fantasydreamxfen) {
+      if (minspira["ciondelusionfid"] == widget.contformen["ciondelusionfid"]) {
+        if (!minspira["imaginationinfo"][3].contains(
+          WitbanTer().rabilitycelogid,
+        )) {
+          minspira["imaginationinfo"][3].add(WitbanTer().rabilitycelogid);
+        }
+
+        WitbanTer().fantasydreamxfen = WitbanTer().fantasydreamxfen;
+        break;
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final teasingu = getClardisgustUinfo(
+      widget.contformen["imaginationinfo"][0],
+    );
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () {
@@ -114,7 +138,14 @@ class _ResentmenTitalityChai extends State<ResentmenTitalityChai> {
                         ),
                         GestureDetector(
                           behavior: HitTestBehavior.translucent,
-                          onTap: () {},
+                          onTap: () {
+                            Get.dialog(
+                              PessimismOptimisMore(
+                                nostalgiauid:
+                                    widget.contformen["imaginationinfo"][0],
+                              ),
+                            );
+                          },
                           child: SizedBox(
                             width: 38,
                             height: 38,
@@ -216,14 +247,14 @@ class _ResentmenTitalityChai extends State<ResentmenTitalityChai> {
                                               ),
                                               child: CircleAvatar(
                                                 backgroundImage: AssetImage(
-                                                  'assets/images/asndilogo.png',
+                                                  teasingu[1],
                                                 ),
                                                 backgroundColor:
                                                     Colors.transparent,
                                               ),
                                             ),
                                             Text(
-                                              '    Athos',
+                                              '    ${teasingu[2]}',
                                               style:
                                                   GoogleFonts.playfairDisplay(
                                                     fontSize: 18,
@@ -246,28 +277,18 @@ class _ResentmenTitalityChai extends State<ResentmenTitalityChai> {
                                               TextField(
                                                 controller: _replynotexin,
                                                 maxLines: null,
+                                                readOnly: true,
                                                 style: GoogleFonts.poppins(
-                                                  height: 2.5,
-                                                  fontSize: 16,
+                                                  height: 2.8,
+                                                  fontSize: 14,
                                                   fontWeight: FontWeight.w400,
-                                                  color: Color(0xff000000),
+                                                  color: Color(0xff57228C),
                                                 ),
                                                 cursorHeight: 18,
                                                 keyboardType:
                                                     TextInputType.multiline,
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
-                                                  hintText:
-                                                      'Enter the content of the reply',
-                                                  hintStyle:
-                                                      GoogleFonts.poppins(
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: Color(
-                                                          0xff666666,
-                                                        ),
-                                                      ),
                                                 ),
                                               ),
                                             ],
@@ -288,7 +309,8 @@ class _ResentmenTitalityChai extends State<ResentmenTitalityChai> {
                                             ),
                                             image: DecorationImage(
                                               image: AssetImage(
-                                                'assets/images/asndilogo.png',
+                                                widget
+                                                    .contformen["imaginationinfo"][1],
                                               ),
                                               fit: BoxFit.cover,
                                             ),
@@ -323,13 +345,19 @@ class _ResentmenTitalityChai extends State<ResentmenTitalityChai> {
                                 padding: const EdgeInsets.only(right: 7.3),
                                 child: Align(
                                   alignment: Alignment.bottomRight,
-                                  child: SizedBox(
-                                    width: 135,
-                                    height: 135,
-                                    child: ClipRRect(
-                                      child: Image.asset(
-                                        'assets/images/cxzncidisa_reply.png',
-                                        fit: BoxFit.fill,
+                                  child: GestureDetector(
+                                    behavior: HitTestBehavior.translucent,
+                                    onTap: () {
+                                      Get.to(UncertaintyComsionReply());
+                                    },
+                                    child: SizedBox(
+                                      width: 135,
+                                      height: 135,
+                                      child: ClipRRect(
+                                        child: Image.asset(
+                                          'assets/images/cxzncidisa_reply.png',
+                                          fit: BoxFit.fill,
+                                        ),
                                       ),
                                     ),
                                   ),

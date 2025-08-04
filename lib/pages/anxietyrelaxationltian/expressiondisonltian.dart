@@ -1,8 +1,16 @@
+import 'package:audioplayers/audioplayers.dart';
+import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/perceptionsadnesswde/pessimismoptimismore.dart';
+import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:record/record.dart';
 
 class ExpressiOndisonLtian extends StatefulWidget {
-  const ExpressiOndisonLtian({super.key});
+  const ExpressiOndisonLtian({super.key, required this.sorrowjil});
+  final dynamic sorrowjil;
 
   @override
   State<ExpressiOndisonLtian> createState() => _ExpressiOndisonLtian();
@@ -11,8 +19,13 @@ class ExpressiOndisonLtian extends StatefulWidget {
 class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
   final TextEditingController _calmangerinput = TextEditingController();
   bool _empathyget = false;
+  double _liberation = 0.0;
+  AudioRecorder? _audburnout;
+  DateTime? _terroranik;
+  final AudioPlayer audioPlayer = AudioPlayer();
   @override
   void dispose() {
+    audioPlayer.dispose();
     super.dispose();
   }
 
@@ -120,13 +133,13 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                               ),
                               child: CircleAvatar(
                                 backgroundImage: AssetImage(
-                                  'assets/images/asndilogo.png',
+                                  widget.sorrowjil[0][1],
                                 ),
                                 backgroundColor: Colors.transparent,
                               ),
                             ),
                             Text(
-                              '    Athos',
+                              '    ${widget.sorrowjil[0][2]}',
                               style: GoogleFonts.playfairDisplay(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
@@ -137,7 +150,13 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                         ),
                         GestureDetector(
                           behavior: HitTestBehavior.translucent,
-                          onTap: () {},
+                          onTap: () {
+                            Get.dialog(
+                              PessimismOptimisMore(
+                                nostalgiauid: widget.sorrowjil[0][0],
+                              ),
+                            );
+                          },
                           child: SizedBox(
                             width: 38,
                             height: 38,
@@ -173,42 +192,152 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                       ],
                     ),
                   ),
-                  Opacity(opacity: 0.0, child: SizedBox(height: 38)),
+                  Opacity(opacity: 0.0, child: SizedBox(height: 46)),
                   Expanded(
-                    child: ListView.separated(
-                      separatorBuilder: (context, index) =>
-                          Opacity(opacity: 0.0, child: SizedBox(height: 16)),
-                      itemCount: 2,
-                      itemBuilder: (context, index) {
-                        return Align(
-                          alignment: Alignment.bottomRight,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 55, right: 16),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Color(0XFFFC8AFF),
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(16),
-                                  bottomLeft: Radius.circular(16),
-                                  bottomRight: Radius.circular(16),
+                    child: Builder(
+                      builder: (context) {
+                        final loadstress = WitbanTer().supptivefortingmes
+                            .firstWhere(
+                              (emoco) =>
+                                  emoco["euphoriaminfo"][0] ==
+                                  widget.sorrowjil[1],
+                            )["euphoriaminfo"][4];
+                        return ListView.separated(
+                          separatorBuilder: (context, index) => Opacity(
+                            opacity: 0.0,
+                            child: SizedBox(height: 16),
+                          ),
+                          itemCount: loadstress.length,
+                          itemBuilder: (context, index) {
+                            if (loadstress[index]["motivationuid"] ==
+                                WitbanTer().rabilitycelogid) {
+                              if (loadstress[index]["curitwarmthysz"] != '') {
+                                return Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 55,
+                                      right: 16,
+                                    ),
+                                    child: GestureDetector(
+                                      behavior: HitTestBehavior.translucent,
+                                      onTap: () async {
+                                        await audioPlayer.play(DeviceFileSource(loadstress[index]["fetysecarefilz"]));
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Color(0XFFFC8AFF),
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(16),
+                                            bottomLeft: Radius.circular(16),
+                                            bottomRight: Radius.circular(16),
+                                          ),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 13,
+                                            vertical: 12,
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                '${loadstress[index]["curitwarmthysz"]}s ',
+                                                style: GoogleFonts.poppins(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Color(0xff000000),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 24,
+                                                height: 19,
+                                                child: ClipRRect(
+                                                  child: Image.asset(
+                                                    'assets/images/qiefnauq_yuz.png',
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+
+                              return Align(
+                                alignment: Alignment.bottomRight,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 55,
+                                    right: 16,
+                                  ),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color(0XFFFC8AFF),
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(16),
+                                        bottomLeft: Radius.circular(16),
+                                        bottomRight: Radius.circular(16),
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 13,
+                                        vertical: 12,
+                                      ),
+                                      child: Text(
+                                        loadstress[index]["intimacytxt"],
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color(0xff000000),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
+                              );
+                            }
+
+                            return Align(
+                              alignment: Alignment.centerLeft,
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 13,
-                                  vertical: 12,
+                                padding: const EdgeInsets.only(
+                                  left: 16,
+                                  right: 55,
                                 ),
-                                child: Text(
-                                  'I love your combination so much. Please keep it up!',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xffffffff),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(0XFFC286FF),
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(0),
+                                      bottomLeft: Radius.circular(16),
+                                      bottomRight: Radius.circular(16),
+                                      topRight: Radius.circular(16),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 13,
+                                      vertical: 12,
+                                    ),
+                                    child: Text(
+                                      loadstress[index]["intimacytxt"],
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
+                            );
+                          },
                         );
                       },
                     ),
@@ -314,13 +443,74 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                                       ),
 
                                       Center(
-                                        child: SizedBox(
-                                          width: 145,
-                                          height: 145,
-                                          child: ClipRRect(
-                                            child: Image.asset(
-                                              'assets/images/iwudhafq_dasyu.png',
-                                              fit: BoxFit.cover,
+                                        child: GestureDetector(
+                                          behavior: HitTestBehavior.translucent,
+                                          onTap: () {
+                                            showeLingexproMes(
+                                              context,
+                                              'Touch and hold to send voice',
+                                            );
+                                          },
+                                          onLongPressStart: (_) async {
+                                            setState(() {
+                                              _liberation = 1.0;
+                                            });
+                                            _terroranik = DateTime.now();
+                                            _audburnout = AudioRecorder();
+
+                                            await kaisDisruption(
+                                              _audburnout!,
+                                              context,
+                                            );
+                                          },
+                                          onLongPressEnd: (_) async {
+                                            setState(() {
+                                              _liberation = 0.0;
+                                            });
+
+                                            final pusrowmurl =
+                                                await _audburnout!.stop();
+
+                                            await addObsessionMes(
+                                              widget.sorrowjil[1],
+                                              "",
+                                              [
+                                                DateTime.now()
+                                                    .difference(_terroranik!)
+                                                    .inSeconds,
+                                                pusrowmurl,
+                                              ],
+                                            );
+
+                                            setState(() {});
+                                          },
+                                          child: SizedBox(
+                                            width: 160,
+                                            height: 160,
+                                            child: Stack(
+                                              alignment: Alignment.center,
+                                              children: [
+                                                Opacity(
+                                                  opacity: _liberation,
+                                                  child: SpinKitRipple(
+                                                    color: Color(0xff57228c),
+                                                    size: 150.0,
+                                                    duration: Duration(
+                                                      milliseconds: 1159,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 145,
+                                                  height: 145,
+                                                  child: ClipRRect(
+                                                    child: Image.asset(
+                                                      'assets/images/iwudhafq_dasyu.png',
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
@@ -362,7 +552,19 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                                     vertical: 16,
                                   ),
                                   suffixIcon: IconButton(
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      if (_calmangerinput.text == '') {
+                                        return;
+                                      }
+
+                                      await addObsessionMes(
+                                        widget.sorrowjil[1],
+                                        _calmangerinput.text,
+                                        ["", ""],
+                                      );
+                                      _calmangerinput.clear();
+                                      setState(() {});
+                                    },
                                     icon: Transform.rotate(
                                       angle: -0.6,
                                       child: const Icon(
@@ -380,6 +582,7 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                           ),
                         ),
                       ),
+                      Opacity(opacity: 0.0, child: SizedBox(height: 6)),
                     ],
                   ),
                 ],
