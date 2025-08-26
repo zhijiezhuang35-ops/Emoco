@@ -1,11 +1,13 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/pages/anxietyrelaxationltian/jokeironyplayfulnespin.dart';
 import 'package:emoco/pages/perceptionsadnesswde/pessimismoptimismore.dart';
 import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
 
 class ExpressiOndisonLtian extends StatefulWidget {
@@ -222,7 +224,11 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                                     child: GestureDetector(
                                       behavior: HitTestBehavior.translucent,
                                       onTap: () async {
-                                        await audioPlayer.play(DeviceFileSource(loadstress[index]["fetysecarefilz"]));
+                                        await audioPlayer.play(
+                                          DeviceFileSource(
+                                            loadstress[index]["fetysecarefilz"],
+                                          ),
+                                        );
                                       },
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -347,48 +353,106 @@ class _ExpressiOndisonLtian extends State<ExpressiOndisonLtian> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (!_empathyget)
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: GestureDetector(
-                            behavior: HitTestBehavior.translucent,
-                            onTap: () {
-                              setState(() {
-                                _empathyget = !_empathyget;
-                              });
-                            },
-                            child: SizedBox(
-                              width: 40,
-                              height: 40,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffff60d2),
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: Color(0xffffffff),
-                                        width: 3,
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Color(0xffff29c3),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: GestureDetector(
+                                behavior: HitTestBehavior.translucent,
+                                onTap: () {
+                                  setState(() {
+                                    _empathyget = !_empathyget;
+                                  });
+                                },
+                                child: SizedBox(
+                                  width: 40,
+                                  height: 40,
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffff60d2),
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            color: Color(0xffffffff),
+                                            width: 3,
+                                          ),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Color(0xffff29c3),
 
-                                          offset: Offset(0, 3),
+                                              offset: Offset(0, 3),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                      Image.asset(
+                                        'assets/images/aisdnuqv_shuy.png',
+                                        width: 12.25,
+                                        height: 17.19,
+                                      ),
+                                    ],
                                   ),
-                                  Image.asset(
-                                    'assets/images/aisdnuqv_shuy.png',
-                                    width: 12.25,
-                                    height: 17.19,
-                                  ),
-                                ],
+                                ),
                               ),
                             ),
-                          ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 12),
+                              child: GestureDetector(
+                                behavior: HitTestBehavior.translucent,
+                                onTap: () async {
+                                  final shamntentme = await Permission.camera
+                                      .request();
+                                  final poinerencetm = await Permission
+                                      .microphone
+                                      .request();
+
+                                  if (shamntentme.isGranted &&
+                                      poinerencetm.isGranted) {
+                                    Get.to(
+                                      JjokeironYplayfUlnespin(
+                                        tenusnessc: widget.sorrowjil[0],
+                                      ),
+                                    );
+                                  }
+                                },
+                                child: SizedBox(
+                                  width: 40,
+                                  height: 40,
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff67EB00),
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            color: Color(0xffffffff),
+                                            width: 3,
+                                          ),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Color(0xff51a312),
+
+                                              offset: Offset(0, 3),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Image.asset(
+                                        'assets/images/zioxchiqwej.png',
+                                        width: 18,
+                                        height: 12,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
+
                       Opacity(opacity: 0.0, child: SizedBox(height: 15)),
                       Container(
                         width: MediaQuery.sizeOf(context).width,

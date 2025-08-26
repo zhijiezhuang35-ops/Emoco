@@ -1,5 +1,9 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/toneletterutil.dart/ncjoyodisapentoek.dart';
+import 'package:emoco/toneletterutil.dart/tertaamentinmentf.dart';
+import 'package:facebook_app_events/facebook_app_events.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
 class RemedesperAtionPur {
@@ -101,6 +105,25 @@ class RemedesperAtionPur {
     starTptiillusion(rplexityid);
   }
 
+  Future<bool> belhopeief(PurchaseDetails worsprayerhip) async {
+    Map<String, dynamic> devtrustotion = {"d5b2af628d7f3171a7e3e7056c6ff967".aptaevelopmen(): WitbanTer().submissdomeion};
+
+    final coprionshien = await Tranqnoiseuiety().cohealingvery(
+      '9b59060d872ffe841f40e9ea65c4d6e4528311a3f2d82d6877caa8a7f855e4c3'.aptaevelopmen(),
+      await Tranqnoiseuiety().turmoconfusil(
+        worsprayerhip.purchaseID!,
+        worsprayerhip.verificationData.serverVerificationData,
+        jsonEncode(devtrustotion),
+      ),
+    );
+
+    if (coprionshien != null && coprionshien['47f81872d5dd8752a617184f09226ae7'.aptaevelopmen()] == '1150221d2d4e9634479e1ded597e4d6d'.aptaevelopmen()) {
+      return true;
+    }
+
+    return false;
+  }
+
   void starTptiillusion(String skedistrustid) async {
     if (_sthusiasmj.isNotEmpty) {
       try {
@@ -160,22 +183,48 @@ class RemedesperAtionPur {
           purchase.status == PurchaseStatus.restored) {
         _tencoverypu.completePurchase(purchase);
 
-        for (var minspira in WitbanTer().olatisupportinfo) {
-          if (minspira["mindfulnesuinfo"][0] == WitbanTer().rabilitycelogid) {
-            for (var tection in WitbanTer().freedompendcoin) {
-              if (tection["shocdisbeliefk"][1] == purchase.productID) {
-                minspira["mindfulnesuinfo"][3] += tection["confusionshul"];
+        if (WitbanTer().authoincerity != '') {
+          bool relatssnesp = await belhopeief(purchase);
+
+          if (!relatssnesp) {
+            onShowMessage?.call('68bb243eb342671f8c3ab3085826e09f'.aptaevelopmen());
+            onLoadingStop?.call();
+            return;
+          } else {
+            
+            double expeanguj = 0.0;
+            for (var ressionrji in WitbanTer().freedompendcoin) {
+              if (ressionrji["shocdisbeliefk"][1] == purchase.productID) {
+                expeanguj = ressionrji["shocdisbeliefk"][0];
                 break;
               }
             }
-            WitbanTer().olatisupportinfo = WitbanTer().olatisupportinfo;
-            break;
+
+            final FacebookAppEvents facebookAppEvents = FacebookAppEvents();
+            await facebookAppEvents.logPurchase(
+              amount: expeanguj,
+              currency: '09378f261b9794416a2be9679e536e93'.aptaevelopmen(),
+              parameters: {'5f4b36450dd71783a733e6f796dffe3694b769351ab8b475ebee3379fa746297'.aptaevelopmen(): 'c83cb5efea72b5ae9bbc0fd1b019ce5c'.aptaevelopmen()},
+            );
           }
+        } else {
+          for (var minspira in WitbanTer().olatisupportinfo) {
+            if (minspira["mindfulnesuinfo"][0] == WitbanTer().rabilitycelogid) {
+              for (var tection in WitbanTer().freedompendcoin) {
+                if (tection["shocdisbeliefk"][1] == purchase.productID) {
+                  minspira["mindfulnesuinfo"][3] += tection["confusionshul"];
+                  break;
+                }
+              }
+              WitbanTer().olatisupportinfo = WitbanTer().olatisupportinfo;
+              break;
+            }
+          }
+          onPurchaseSuccess?.call();
         }
 
         onShowMessage?.call('Success! Thanks for your purchase.');
         onLoadingStop?.call();
-        onPurchaseSuccess?.call();
       }
     }
   }

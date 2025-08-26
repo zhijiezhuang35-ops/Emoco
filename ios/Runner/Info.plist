@@ -18,8 +18,26 @@
 		<string>APPL</string>
 		<key>CFBundleShortVersionString</key>
 		<string>$(FLUTTER_BUILD_NAME)</string>
-		<key>CFBundleSignature</key>
+		<key>CFBundleobligatidutyon</key>
 		<string>????</string>
+								<key>CFBundleURLTypes</key>
+		<array>
+
+			<dict>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>fb720427620988692</string>
+				</array>
+			</dict>
+		</array>
+		<key>FacebookAppID</key>
+		<string>720427620988692</string>
+		<key>FacebookClientToken</key>
+		<string>6e137d101d19af078622dc0dfc9097df</string>
+		<key>FacebookDisplayName</key>
+		<string>Burner</string>
+		<key>FacebookAutoLogAppEventsEnabled</key>
+		<true/>
 		<key>CFBundleVersion</key>
 		<string>$(FLUTTER_BUILD_NUMBER)</string>
 		<key>LSRequiresIPhoneOS</key>
@@ -52,6 +70,29 @@
     <key>NSAllowsArbitraryLoads</key>
     <true/>
 </dict>
+				<key>UIBackgroundModes</key>
+		<array>
+			<string>remote-notification</string>
+		</array>
+		<key>UNUserNotificationCenter</key>
+		<dict>
+			<key>UNAuthorizationOptions</key>
+			<array>
+				<string>alert</string>
+			</array>
+		</dict>
+		<key>LSApplicationQueriesSchemes</key>
+		<array>
+			<string>whatsapp</string>
+			<string>instagram</string>
+			<string>fb</string>
+			<string>tiktok</string>
+			<string>comgooglemaps</string>
+			<string>tweetie</string>
+			<string>wechat</string>
+			<string>alipay</string>
+			<string>mqq</string>
+		</array>
 		<key>NSCameraUsageDescription</key>
 		<string>This app needs to access your camera to take pictures so that you can shoot and upload videos or other image materials. All shooting data will be securely stored on your personal device and will only be uploaded or shared with your explicit consent.</string>
 		<key>NSMicrophoneUsageDescription</key>

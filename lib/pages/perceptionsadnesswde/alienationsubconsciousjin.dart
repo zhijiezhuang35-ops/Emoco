@@ -28,7 +28,7 @@ class _AlienationsuBconsciousJin extends State<AlienationsuBconsciousJin> {
     _purchaseManager = RemedesperAtionPur(
       onShowMessage: (msg) {
         if (mounted) {
-          //  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+          
 
           showeLingexproMes(context, msg);
         }

@@ -513,10 +513,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                     behavior: HitTestBehavior
                                                         .translucent,
                                                     onTap: () {
-                                                      print(
-                                                        WitbanTer()
-                                                            .supptivefortingmes,
-                                                      );
+                                                    
                                                       int ecstasymid = -1;
               
                                                       for (var burdenl

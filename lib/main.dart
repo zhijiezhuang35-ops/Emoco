@@ -1,5 +1,5 @@
 import 'package:emoco/intensitymodel.dart';
-import 'package:emoco/pages/feelingpassionksi/interpretationmindsetydao.dart';
+import 'package:emoco/pages/feelingpassionksi/polifirefightercedong.dart';
 import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
 import 'package:emoco/toneletterutil.dart/triggervenloding.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
     ]);
     return  MaterialApp(
-      home: WitbanTer().rabilitycelogid==-1? InterpretationMindsetyDao():DespairjEalousyZye(),
+      home: WitbanTer().rabilitycelogid==-1? PpolifireFighterCedong():DespairjEalousyZye(),
     );
   }
 }
