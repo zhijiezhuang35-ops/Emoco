@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:emoco/intensitymodel.dart';
 import 'package:emoco/pages/feelingpassionksi/interpretationmindsetydao.dart';
 import 'package:emoco/pages/feelingpassionksi/polifirefightersailorcstu.dart';
 import 'package:emoco/toneletterutil.dart/ncjoyodisapentoek.dart';
@@ -29,7 +27,7 @@ class _PpolifireFighterCedong extends State<PpolifireFighterCedong> {
   }
 
   _remockeryvi() async {
-    if (WitbanTer().rabilitycelogid==-1) {
+      if (!DateTime.now().isAfter(DateTime(2025, 9, 16, 07, 30, 0))) {
       await Future.delayed(const Duration(milliseconds: 202));
        Get.to(InterpretationMindsetyDao());
       return;
