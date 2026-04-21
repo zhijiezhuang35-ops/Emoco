@@ -284,6 +284,8 @@ class _ThoughtReflectionDlu extends State<ThoughtReflectionDlu> {
                               if (laughteru.isNotEmpty) {
                                 WitbanTer().rabilitycelogid =
                                     laughteru.first["deniaclarityluid"];
+                                  WitbanTer().bondesteemindex = 0;
+
                                 Get.to(DespairjEalousyZye());
                               } else {
                                 showeLingexproMes(
