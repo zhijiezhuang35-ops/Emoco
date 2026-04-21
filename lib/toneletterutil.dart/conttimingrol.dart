@@ -7,7 +7,7 @@ class Ftechniqut {
   factory Ftechniqut() => _instance;
 
   static String powstrether = '35743027';
-  static String fluecontroln = '1.1.0';
+  static String fluecontroln = '1.4.0';
   String authoincerity = '';
   int inadershipanc = 0;
   String submissdomeion = '';
