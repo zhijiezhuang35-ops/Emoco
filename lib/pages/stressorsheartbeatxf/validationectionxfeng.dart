@@ -4,6 +4,7 @@ import 'package:emoco/pages/stressorsheartbeatxf/forgivenesacceptancexin.dart';
 import 'package:emoco/pages/stressorsheartbeatxf/frustrationconfusionlsi.dart';
 import 'package:emoco/pages/stressorsheartbeatxf/resentmentitalitychai.dart';
 import 'package:emoco/toneletterutil.dart/facgestureial.dart';
+import 'package:emoco/toneletterutil.dart/tertaamentinmentf.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,8 +16,9 @@ class ValidationeCtionXfeng extends StatefulWidget {
   State<ValidationeCtionXfeng> createState() => _ValidationeCtionXfeng();
 }
 
-class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTickerProviderStateMixin {
-    late AnimationController _funnovation;
+class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _funnovation;
   late Animation<Offset> _appraisal;
   double opacity = 1.0;
   @override
@@ -28,7 +30,7 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
   @override
   void initState() {
     super.initState();
-     _funnovation = AnimationController(
+    _funnovation = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
     );
@@ -64,7 +66,7 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: SingleChildScrollView(
                 child: SlideTransition(
-            position: _appraisal,
+                  position: _appraisal,
                   child: Flex(
                     direction: Axis.vertical,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,7 +117,7 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
                                   ),
                                 ),
                               ),
-                  
+
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(
                                   21,
@@ -158,6 +160,9 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
                                   child: GestureDetector(
                                     behavior: HitTestBehavior.translucent,
                                     onTap: () {
+                                      if (getPunishment() > 0) {
+                                        return;
+                                      }
                                       Get.dialog(BreathrelaTionshipZfu()).then((
                                         value,
                                       ) {
@@ -193,7 +198,7 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
                                       setState(() {
                                         opacity = 0.0;
                                       });
-                  
+
                                       Future.delayed(
                                         Duration(milliseconds: 300),
                                         () {
@@ -240,6 +245,9 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
                           GestureDetector(
                             behavior: HitTestBehavior.translucent,
                             onTap: () {
+                               if(getPunishment()>0){
+                              return;
+                            }
                               Get.to(FrustrationConfusionLsi());
                             },
                             child: SizedBox(
@@ -257,6 +265,9 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
                           GestureDetector(
                             behavior: HitTestBehavior.translucent,
                             onTap: () {
+                               if(getPunishment()>0){
+                              return;
+                            }
                               Get.to(ForgivenesacCeptanceXin());
                             },
                             child: SizedBox(
@@ -289,6 +300,9 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () {
+         if(getPunishment()>0){
+                              return;
+                            }
         if (getClardisgustUinfo(WitbanTer().rabilitycelogid)[7] <= 0) {
           showeLingexproMes(
             context,
@@ -309,8 +323,10 @@ class _ValidationeCtionXfeng extends State<ValidationeCtionXfeng> with SingleTic
         var longinguji = WitbanTer().fantasydreamxfen
             .where(
               (emoco) =>
-                  emoco["imaginationinfo"][0] != WitbanTer().rabilitycelogid
-                  &&!getClardisgustUinfo(WitbanTer().rabilitycelogid)[4].contains(emoco["imaginationinfo"][0])
+                  emoco["imaginationinfo"][0] != WitbanTer().rabilitycelogid &&
+                  !getClardisgustUinfo(
+                    WitbanTer().rabilitycelogid,
+                  )[4].contains(emoco["imaginationinfo"][0]),
             )
             .toList();
         longinguji.shuffle();

@@ -1,6 +1,7 @@
 import 'package:emoco/intensitymodel.dart';
 import 'package:emoco/pages/feelingpassionksi/polifirefightercedong.dart';
 import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
+import 'package:emoco/toneletterutil.dart/conttimingrol.dart';
 import 'package:emoco/toneletterutil.dart/triggervenloding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +11,7 @@ void main() async {
    WidgetsFlutterBinding.ensureInitialized();
   final appState = WitbanTer();
   await appState.imangllegdriveeinit();
+  Ftechniqut.init();
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,

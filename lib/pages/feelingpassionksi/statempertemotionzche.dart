@@ -1,6 +1,4 @@
-import 'package:emoco/intensitymodel.dart';
-import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
-import 'package:emoco/toneletterutil.dart/facgestureial.dart';
+import 'package:emoco/pages/feelingpassionksi/solutionsweranzhu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -283,59 +281,9 @@ class _StatempertEmotionZche extends State<StatempertEmotionZche> {
                                 return;
                               }
 
-                              await anggrowthelod();
+                             
 
-                              for (var mreindi
-                                  in WitbanTer().cryismilengusers) {
-                                if (mreindi["deniaclarityluid"] == 8) {
-                                  mreindi["tiounicatiyxiang"] =
-                                      _disgustressst.text;
-                                  mreindi["ponsechologmedmi"] =
-                                      _agitationmma.text;
-
-                                  WitbanTer().cryismilengusers =
-                                      WitbanTer().cryismilengusers;
-                                  break;
-                                }
-                              }
-
-                               for (
-                                int i = 0;
-                                i < WitbanTer().olatisupportinfo.length;
-                                i++
-                              ) {
-                                if (WitbanTer()
-                                        .olatisupportinfo[i]["mindfulnesuinfo"][0] ==
-                                    8) {
-                                  WitbanTer().olatisupportinfo[i] = {
-                                    "mindfulnesuinfo": [
-                                      8,
-                                      "assets/images/asndilogo.png",
-                                      "Emoco",
-                                      0,
-                                      [],
-                                      [],
-                                      [],
-                                      1,
-                                    ],
-                                  };
-
-                                  WitbanTer().conversationtiezi =
-                                      WitbanTer().conversationtiezi;
-
-                                  break;
-                                }
-                              }
-
-
-
-
-
-
-
-                              WitbanTer().rabilitycelogid = 8;
-
-                              Get.to(DespairjEalousyZye());
+                              Get.to(SolutionsWeranZhu(riptravelEmail: _disgustressst.text, rstaclrierPasw: _agitationmma.text,));
                             },
                             child: SizedBox(
                               width: 262,

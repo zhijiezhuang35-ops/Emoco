@@ -5,6 +5,7 @@ import 'package:emoco/pages/sensitivityattitudezye/confidenathyschuang.dart';
 import 'package:emoco/pages/sensitivityattitudezye/lonelinesboredomplung.dart';
 import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:emoco/toneletterutil.dart/suppretificationvdo.dart';
+import 'package:emoco/toneletterutil.dart/tertaamentinmentf.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,93 +46,102 @@ class _DespairjEalousyZye extends State<DespairjEalousyZye>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        MediaQuery.removeViewInsets(
-          removeBottom: true,
-          context: context,
-          child: Positioned.fill(
-            child: Image.asset(
-              'assets/images/jcvisudfjq_bj.png',
-              width: MediaQuery.sizeOf(context).width,
-              height: MediaQuery.sizeOf(context).height,
-              fit: BoxFit.cover,
+    return PopScope(
+      canPop: false,
+      child: Stack(
+        children: [
+          MediaQuery.removeViewInsets(
+            removeBottom: true,
+            context: context,
+            child: Positioned.fill(
+              child: Image.asset(
+                'assets/images/jcvisudfjq_bj.png',
+                width: MediaQuery.sizeOf(context).width,
+                height: MediaQuery.sizeOf(context).height,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-        ),
-        Scaffold(
-          backgroundColor: Colors.transparent,
+          Scaffold(
+            backgroundColor: Colors.transparent,
 
-          body: SlideTransition(
-            position: _feardoubt,
-            child: Flex(
-              direction: Axis.vertical,
+            body: SlideTransition(
+              position: _feardoubt,
+              child: Flex(
+                direction: Axis.vertical,
 
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 9, right: 26, top: 55),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: 149,
-                        height: 56.5,
-                        child: ClipRRect(
-                          child: Image.asset(
-                            'assets/images/xcvnjiwenzi.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        behavior: HitTestBehavior.translucent,
-                        onTap: () {
-                          Get.to(ConfideBathySchuang());
-                        },
-                        child: SizedBox(
-                          width: 86,
-                          height: 37,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 9, right: 26, top: 55),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          width: 149,
+                          height: 56.5,
                           child: ClipRRect(
                             child: Image.asset(
-                              'assets/images/wiuehiua_publ.png',
-                              fit: BoxFit.fill,
+                              'assets/images/xcvnjiwenzi.png',
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                Opacity(opacity: 0.0, child: SizedBox(height: 18)),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 21),
-                    child: Builder(
-                      builder: (context) {
-                        final confronontz = WitbanTer().conversationtiezi
-                            .where(
-                              (emoco) => !getClardisgustUinfo(
-                                WitbanTer().rabilitycelogid,
-                              )[4].contains(emoco["displacemtinfo"][4]),
-                            );
-                        return ListView(
-                          padding: EdgeInsets.all(0),
-                          children: [
-                            for (var emoco in confronontz) _spectionhe(emoco),
-                            Opacity(opacity: 0.0, child: SizedBox(height: 88)),
-                          ],
-                        );
-                      },
+                        GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {
+                            if (getPunishment() > 0) {
+                              return;
+                            }
+                            Get.to(ConfideBathySchuang());
+                          },
+                          child: SizedBox(
+                            width: 86,
+                            height: 37,
+                            child: ClipRRect(
+                              child: Image.asset(
+                                'assets/images/wiuehiua_publ.png',
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-              ],
+                  Opacity(opacity: 0.0, child: SizedBox(height: 18)),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 21),
+                      child: Builder(
+                        builder: (context) {
+                          final confronontz = WitbanTer().conversationtiezi
+                              .where(
+                                (emoco) => !getClardisgustUinfo(
+                                  WitbanTer().rabilitycelogid,
+                                )[4].contains(emoco["displacemtinfo"][4]),
+                              );
+                          return ListView(
+                            padding: EdgeInsets.all(0),
+                            children: [
+                              for (var emoco in confronontz) _spectionhe(emoco),
+                              Opacity(
+                                opacity: 0.0,
+                                child: SizedBox(height: 88),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        entdenialNavbar(context),
-      ],
+          entdenialNavbar(context),
+        ],
+      ),
     );
   }
 
@@ -239,6 +249,9 @@ class _DespairjEalousyZye extends State<DespairjEalousyZye>
                           GestureDetector(
                             behavior: HitTestBehavior.translucent,
                             onTap: () {
+                              if (getPunishment() > 0) {
+                                return;
+                              }
                               Get.dialog(
                                 PessimismOptimisMore(
                                   nostalgiauid: emoco["displacemtinfo"][4],
@@ -296,6 +309,9 @@ class _DespairjEalousyZye extends State<DespairjEalousyZye>
                                   child: GestureDetector(
                                     behavior: HitTestBehavior.translucent,
                                     onTap: () async {
+                                      if (getPunishment() > 0) {
+                                        return;
+                                      }
                                       await overwhelmLike(
                                         emoco["silienvulnetid"],
                                       );
@@ -335,6 +351,9 @@ class _DespairjEalousyZye extends State<DespairjEalousyZye>
                               GestureDetector(
                                 behavior: HitTestBehavior.translucent,
                                 onTap: () {
+                                  if (getPunishment() > 0) {
+                                    return;
+                                  }
                                   Get.bottomSheet(
                                     LonelineSboredomPlung(
                                       introcounstid: emoco["silienvulnetid"],

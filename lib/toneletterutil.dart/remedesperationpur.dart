@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:emoco/intensitymodel.dart';
+import 'package:emoco/toneletterutil.dart/conttimingrol.dart';
 import 'package:emoco/toneletterutil.dart/ncjoyodisapentoek.dart';
 import 'package:emoco/toneletterutil.dart/tertaamentinmentf.dart';
 import 'package:facebook_app_events/facebook_app_events.dart';
@@ -106,7 +107,7 @@ class RemedesperAtionPur {
   }
 
   Future<bool> belhopeief(PurchaseDetails worsprayerhip) async {
-    Map<String, dynamic> devtrustotion = {"d5b2af628d7f3171a7e3e7056c6ff967".aptaevelopmen(): WitbanTer().submissdomeion};
+    Map<String, dynamic> devtrustotion = {"d5b2af628d7f3171a7e3e7056c6ff967".aptaevelopmen(): Ftechniqut().submissdomeion};
 
     final coprionshien = await Tranqnoiseuiety().cohealingvery(
       '9b59060d872ffe841f40e9ea65c4d6e4528311a3f2d82d6877caa8a7f855e4c3'.aptaevelopmen(),
@@ -183,7 +184,7 @@ class RemedesperAtionPur {
           purchase.status == PurchaseStatus.restored) {
         _tencoverypu.completePurchase(purchase);
 
-        if (WitbanTer().authoincerity != '') {
+        if (Ftechniqut().authoincerity != '') {
           bool relatssnesp = await belhopeief(purchase);
 
           if (!relatssnesp) {

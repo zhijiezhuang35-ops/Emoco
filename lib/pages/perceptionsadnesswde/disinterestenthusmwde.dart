@@ -9,6 +9,7 @@ import 'package:emoco/pages/perceptionsadnesswde/pessimismoptimismore.dart';
 import 'package:emoco/pages/perceptionsadnesswde/pulsesharingfrownlhei.dart';
 import 'package:emoco/toneletterutil.dart/facgestureial.dart';
 import 'package:emoco/toneletterutil.dart/suppretificationvdo.dart';
+import 'package:emoco/toneletterutil.dart/tertaamentinmentf.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,7 +28,8 @@ class DisinteresTenthusmWde extends StatefulWidget {
   State<DisinteresTenthusmWde> createState() => _DisinteresTenthusmWde();
 }
 
-class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTickerProviderStateMixin {
+class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde>
+    with SingleTickerProviderStateMixin {
   bool _guiltgret = false;
   bool _curiositycha = false;
 
@@ -35,7 +37,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
   late Animation<Offset> _braverydh;
   @override
   void dispose() {
-     _uncertainty.dispose();
+    _uncertainty.dispose();
     super.dispose();
   }
 
@@ -43,7 +45,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
   void initState() {
     super.initState();
 
-     _uncertainty = AnimationController(
+    _uncertainty = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
     );
@@ -81,7 +83,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
           body: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: SlideTransition(
-            position: _braverydh,
+              position: _braverydh,
               child: Flex(
                 direction: Axis.vertical,
                 children: [
@@ -119,7 +121,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                           ),
                         ),
                       ),
-              
+
                       Padding(
                         padding: const EdgeInsets.fromLTRB(20, 55, 20, 0),
                         child: Column(
@@ -172,6 +174,9 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                   GestureDetector(
                                     behavior: HitTestBehavior.translucent,
                                     onTap: () {
+                                      if (getPunishment() > 0) {
+                                        return;
+                                      }
                                       Get.dialog(
                                         PessimismOptimisMore(
                                           nostalgiauid: widget.avoidanceuid,
@@ -195,7 +200,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                               boxShadow: [
                                                 BoxShadow(
                                                   color: Color(0xff782efb),
-              
+
                                                   offset: Offset(0, 3),
                                                 ),
                                               ],
@@ -259,7 +264,8 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                 style:
                                                     GoogleFonts.playfairDisplay(
                                                       fontSize: 18,
-                                                      fontWeight: FontWeight.w700,
+                                                      fontWeight:
+                                                          FontWeight.w700,
                                                       color: Color(0xff57228c),
                                                     ),
                                               ),
@@ -286,10 +292,8 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                     PulsesharinGfrownLhei(
                                                       xhaustion: 2,
                                                     ),
-                                                  )?.then((_){
-                                                    setState(() {
-                                                      
-                                                    });
+                                                  )?.then((_) {
+                                                    setState(() {});
                                                   });
                                                 }
                                               },
@@ -297,16 +301,20 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                 width: 80,
                                                 height: 52,
                                                 child: Wrap(
-                                                  alignment: WrapAlignment.center,
+                                                  alignment:
+                                                      WrapAlignment.center,
                                                   children: [
                                                     Text(
                                                       '${envyhateu[5].length}',
-                                                      style: GoogleFonts.poppins(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        color: Color(0xff57228c),
-                                                      ),
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                            fontSize: 20,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            color: Color(
+                                                              0xff57228c,
+                                                            ),
+                                                          ),
                                                     ),
                                                     Text(
                                                       'Followings',
@@ -325,9 +333,10 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.symmetric(
-                                                horizontal: 27,
-                                              ),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                    horizontal: 27,
+                                                  ),
                                               child: Container(
                                                 width: 1,
                                                 height: 25.5,
@@ -345,10 +354,8 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                     PulsesharinGfrownLhei(
                                                       xhaustion: 3,
                                                     ),
-                                                  )?.then((_){
-                                                    setState(() {
-                                                      
-                                                    });
+                                                  )?.then((_) {
+                                                    setState(() {});
                                                   });
                                                 }
                                               },
@@ -356,7 +363,8 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                 width: 80,
                                                 height: 52,
                                                 child: Wrap(
-                                                  alignment: WrapAlignment.center,
+                                                  alignment:
+                                                      WrapAlignment.center,
                                                   children: [
                                                     Row(
                                                       mainAxisAlignment:
@@ -405,16 +413,20 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                             if (!_guiltgret) {
                                               return Row(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
                                                 children: [
                                                   GestureDetector(
                                                     behavior: HitTestBehavior
                                                         .translucent,
                                                     onTap: () async {
+                                                      if (getPunishment() > 0) {
+                                                        return;
+                                                      }
                                                       await tractionFollow(
                                                         widget.avoidanceuid,
                                                       );
-              
+
                                                       setState(() {});
                                                     },
                                                     child: SizedBox(
@@ -434,7 +446,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                                     WitbanTer()
                                                                         .rabilitycelogid,
                                                                   );
-              
+
                                                               if (pcaponlogu[5]
                                                                   .contains(
                                                                     widget
@@ -447,7 +459,8 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                                   children: [
                                                                     SizedBox(
                                                                       width: 22,
-                                                                      height: 23,
+                                                                      height:
+                                                                          23,
                                                                       child: ClipRRect(
                                                                         child: Image.asset(
                                                                           'assets/images/zxchiuq_zhengq.png',
@@ -462,8 +475,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                                         fontSize:
                                                                             16,
                                                                         fontWeight:
-                                                                            FontWeight
-                                                                                .w600,
+                                                                            FontWeight.w600,
                                                                         color: Colors
                                                                             .white,
                                                                       ),
@@ -478,7 +490,8 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                                   children: [
                                                                     SizedBox(
                                                                       width: 32,
-                                                                      height: 26,
+                                                                      height:
+                                                                          26,
                                                                       child: ClipRRect(
                                                                         child: Image.asset(
                                                                           'assets/images/xzonciqd_guan.png',
@@ -493,8 +506,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                                         fontSize:
                                                                             16,
                                                                         fontWeight:
-                                                                            FontWeight
-                                                                                .w600,
+                                                                            FontWeight.w600,
                                                                         color: Colors
                                                                             .white,
                                                                       ),
@@ -508,14 +520,30 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                       ),
                                                     ),
                                                   ),
-              
+
                                                   GestureDetector(
                                                     behavior: HitTestBehavior
                                                         .translucent,
                                                     onTap: () {
-                                                    
+                                                      if (getPunishment() > 0) {
+                                                        return;
+                                                      }
+
+                                                      if (envyhateu[5].contains(
+                                                            WitbanTer()
+                                                                .rabilitycelogid,
+                                                          ) &&
+                                                          envyhateu[6].contains(
+                                                            WitbanTer()
+                                                                .rabilitycelogid,
+                                                          )) {
+                                                      } else {
+                                                        showeLingexproMes(context, "You can only chat if you follow each other.");
+                                                        return;
+                                                      }
+
                                                       int ecstasymid = -1;
-              
+
                                                       for (var burdenl
                                                           in WitbanTer()
                                                               .supptivefortingmes) {
@@ -534,43 +562,39 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                           break;
                                                         }
                                                       }
-              
+
                                                       if (ecstasymid == -1) {
                                                         ecstasymid =
                                                             WitbanTer()
                                                                 .supptivefortingmes
                                                                 .last["euphoriaminfo"][0] +
                                                             1;
-              
-                                                        WitbanTer()
-                                                            .supptivefortingmes
-                                                            .add({
-                                                              "euphoriaminfo": [
-                                                                ecstasymid,
-                                                                [
-                                                                  widget
-                                                                      .avoidanceuid,
-                                                                  WitbanTer()
-                                                                      .rabilitycelogid,
-                                                                ],
-                                                                "",
-                                                                DateFormat(
-                                                                      'h:mm a',
-                                                                    )
-                                                                    .format(
-                                                                      DateTime.now(),
-                                                                    )
-                                                                    .toLowerCase(),
-                                                                [],
-                                                              ],
-                                                            });
-              
+
+                                                        WitbanTer().supptivefortingmes.add({
+                                                          "euphoriaminfo": [
+                                                            ecstasymid,
+                                                            [
+                                                              widget
+                                                                  .avoidanceuid,
+                                                              WitbanTer()
+                                                                  .rabilitycelogid,
+                                                            ],
+                                                            "",
+                                                            DateFormat('h:mm a')
+                                                                .format(
+                                                                  DateTime.now(),
+                                                                )
+                                                                .toLowerCase(),
+                                                            [],
+                                                          ],
+                                                        });
+
                                                         WitbanTer()
                                                                 .supptivefortingmes =
                                                             WitbanTer()
                                                                 .supptivefortingmes;
                                                       }
-              
+
                                                       Get.to(
                                                         ExpressiOndisonLtian(
                                                           sorrowjil: [
@@ -664,7 +688,8 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                                             child: ClipRRect(
                                                               child: Image.asset(
                                                                 'assets/images/nicniuqf_jins.png',
-                                                                fit: BoxFit.cover,
+                                                                fit: BoxFit
+                                                                    .cover,
                                                               ),
                                                             ),
                                                           ),
@@ -697,14 +722,16 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                         ),
                                       ],
                                     ),
-              
+
                                     Align(
                                       alignment: Alignment.topRight,
                                       child: Builder(
                                         builder: (context) {
                                           if (_guiltgret) {
                                             return Padding(
-                                              padding: const EdgeInsets.all(16.0),
+                                              padding: const EdgeInsets.all(
+                                                16.0,
+                                              ),
                                               child: GestureDetector(
                                                 behavior:
                                                     HitTestBehavior.translucent,
@@ -728,7 +755,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                               ),
                                             );
                                           }
-              
+
                                           return Padding(
                                             padding: const EdgeInsets.only(
                                               top: 30,
@@ -823,7 +850,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                       ),
                                     );
                                   }
-              
+
                                   return Text(
                                     'Settings',
                                     style: GoogleFonts.playfairDisplay(
@@ -839,7 +866,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                         ),
                       ],
                     ),
-              
+
                   Opacity(opacity: 0.0, child: SizedBox(height: 20)),
                   Builder(
                     builder: (context) {
@@ -851,7 +878,7 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                                   widget.avoidanceuid,
                             )
                             .toList();
-              
+
                         return SizedBox(
                           width: 335,
                           child: Wrap(
@@ -1020,6 +1047,9 @@ class _DisinteresTenthusmWde extends State<DisinteresTenthusmWde> with SingleTic
                       child: GestureDetector(
                         behavior: HitTestBehavior.translucent,
                         onTap: () {
+                          if (getPunishment() > 0) {
+                            return;
+                          }
                           Get.dialog(
                             PessimismOptimisMore(
                               nostalgiauid: widget.avoidanceuid,

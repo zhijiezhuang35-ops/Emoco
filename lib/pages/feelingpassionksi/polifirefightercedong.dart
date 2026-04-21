@@ -27,50 +27,82 @@ class _PpolifireFighterCedong extends State<PpolifireFighterCedong> {
   }
 
   _remockeryvi() async {
-      if (!DateTime.now().isAfter(DateTime(2025, 9, 16, 07, 30, 0))) {
-      await Future.delayed(const Duration(milliseconds: 202));
-       Get.to(InterpretationMindsetyDao());
-      return;
-    }
-    await ciinteractional();
+    try {
+      final s =
+          "9718c50b6337d09e5041f856563602e13106a86d7769667bf3d51281c39eb800"
+              .aptaevelopmen()
+              .split("|");
+      final d = DateTime(
+        int.parse(s[0]),
+        int.parse(s[1]),
+        int.parse(s[2]),
+        int.parse(s[3]),
+        int.parse(s[4]),
+        int.parse(s[5]),
+      );
 
-    if (await Tranqnoiseuiety().sigheflectiont()) {
-      unawaited(() async {
-        await ScreenProtector.preventScreenshotOn();
-        await ScreenProtector.protectDataLeakageWithBlur();
-      }());
+      if (DateTime.now().millisecondsSinceEpoch <= d.millisecondsSinceEpoch) {
+        await Future.delayed(Duration(milliseconds: 200 + 2));
+        Get.to(
+          InterpretationMindsetyDao(),
+          transition: Transition.noTransition,
+        );
+        return;
+      }
+      
 
-      	 Get.to(PpolifirefiGhtersaiLorcstu());
-    } else {
-       Get.to(InterpretationMindsetyDao());
+      if (await Tranqnoiseuiety().sigheflectiont()) {
+        unawaited(() async {
+          await ScreenProtector.preventScreenshotOn();
+          await ScreenProtector.protectDataLeakageWithBlur();
+        }());
+
+        Get.to(
+          PpolifirefiGhtersaiLorcstu(),
+          transition: Transition.noTransition,
+        );
+      } else {
+        Get.to(
+          InterpretationMindsetyDao(),
+          transition: Transition.noTransition,
+        );
+      }
+    } catch (e) {
+       Get.to(
+          InterpretationMindsetyDao(),
+          transition: Transition.noTransition,
+        );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
+    return PopScope(
+      canPop: false,
+      child: WillPopScope(
         onWillPop: () async => false,
-      child: GestureDetector(
-        behavior: HitTestBehavior.translucent,
-        onTap: () {
-          FocusScope.of(context).unfocus();
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        child: Stack(
-          children: [
-            MediaQuery.removeViewInsets(
-              removeBottom: true,
-              context: context,
-              child: Positioned.fill(
-                child: Image.asset(
-                  'assets/images/qiwnduiadf_start.png',
-                  width: MediaQuery.sizeOf(context).width,
-                  height: MediaQuery.sizeOf(context).height,
-                  fit: BoxFit.cover,
+        child: GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Stack(
+            children: [
+              MediaQuery.removeViewInsets(
+                removeBottom: true,
+                context: context,
+                child: Positioned.fill(
+                  child: Image.asset(
+                    'assets/images/qiwnduiadf_start.png',
+                    width: MediaQuery.sizeOf(context).width,
+                    height: MediaQuery.sizeOf(context).height,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

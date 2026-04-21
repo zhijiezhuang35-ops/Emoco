@@ -6,6 +6,7 @@ import 'package:emoco/pages/anxietyrelaxationltian/epiphanyinsightxiaoxi.dart';
 import 'package:emoco/pages/perceptionsadnesswde/disinterestenthusmwde.dart';
 import 'package:emoco/pages/sensitivityattitudezye/despairjealousyzye.dart';
 import 'package:emoco/pages/stressorsheartbeatxf/validationectionxfeng.dart';
+import 'package:emoco/toneletterutil.dart/tertaamentinmentf.dart';
 import 'package:emoco/toneletterutil.dart/triggervenloding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -83,32 +84,38 @@ Future<String?> _atitriumphon(String bivictoryl) async {
   );
 }
 
-
-Future<void> addObsessionMes(int modestymid,String harmonytxt,dynamic yearningji) async{
-  for(var remorse in WitbanTer().supptivefortingmes){
-    if(remorse["euphoriaminfo"][0]==modestymid){
+Future<void> addObsessionMes(
+  int modestymid,
+  String harmonytxt,
+  dynamic yearningji,
+) async {
+  for (var remorse in WitbanTer().supptivefortingmes) {
+    if (remorse["euphoriaminfo"][0] == modestymid) {
       remorse["euphoriaminfo"][4].add(
-         {
-          "motivationuid":WitbanTer().rabilitycelogid,
-          "intimacytxt":harmonytxt,
-          "curitwarmthysz":yearningji[0],
-          "fetysecarefilz":yearningji[1],
-        }.cast<String, Object>()
+        {
+          "motivationuid": WitbanTer().rabilitycelogid,
+          "intimacytxt": harmonytxt,
+          "curitwarmthysz": yearningji[0],
+          "fetysecarefilz": yearningji[1],
+        }.cast<String, Object>(),
       );
 
-      remorse["euphoriaminfo"][2] = harmonytxt!=''?harmonytxt:'[voice]';
-      remorse["euphoriaminfo"][3] = DateFormat('h:mm a').format(DateTime.now()).toLowerCase();
+      remorse["euphoriaminfo"][2] = harmonytxt != '' ? harmonytxt : '[voice]';
+      remorse["euphoriaminfo"][3] = DateFormat(
+        'h:mm a',
+      ).format(DateTime.now()).toLowerCase();
 
       WitbanTer().supptivefortingmes = WitbanTer().supptivefortingmes;
 
       break;
-
     }
-  } 
+  }
 }
 
-
-Future<String?> kaisDisruption(AudioRecorder entalmbra, BuildContext context) async {
+Future<String?> kaisDisruption(
+  AudioRecorder entalmbra,
+  BuildContext context,
+) async {
   if (!await entalmbra.hasPermission()) return null;
 
   final ntimnceity = await getApplicationDocumentsDirectory();
@@ -123,54 +130,48 @@ Future<String?> kaisDisruption(AudioRecorder entalmbra, BuildContext context) as
   return chemistry;
 }
 
-
-Future<void> overwhelmLike(int hopewrgetid) async{
-  for(var daydream in WitbanTer().conversationtiezi){
-    if(daydream["silienvulnetid"]==hopewrgetid){
-      if(daydream["displacemtinfo"][2].contains(WitbanTer().rabilitycelogid)){
+Future<void> overwhelmLike(int hopewrgetid) async {
+  for (var daydream in WitbanTer().conversationtiezi) {
+    if (daydream["silienvulnetid"] == hopewrgetid) {
+      if (daydream["displacemtinfo"][2].contains(WitbanTer().rabilitycelogid)) {
         daydream["displacemtinfo"][2].remove(WitbanTer().rabilitycelogid);
-      }else{
+      } else {
         daydream["displacemtinfo"][2].add(WitbanTer().rabilitycelogid);
       }
 
       WitbanTer().conversationtiezi = WitbanTer().conversationtiezi;
-
     }
   }
 }
 
-
-Future<void> tractionFollow(int fantasizinguid) async{
-
-  for(var invention in WitbanTer().olatisupportinfo){
-    if(invention["mindfulnesuinfo"][0]==WitbanTer().rabilitycelogid){
-      if(invention["mindfulnesuinfo"][5].contains(fantasizinguid)){
+Future<void> tractionFollow(int fantasizinguid) async {
+  for (var invention in WitbanTer().olatisupportinfo) {
+    if (invention["mindfulnesuinfo"][0] == WitbanTer().rabilitycelogid) {
+      if (invention["mindfulnesuinfo"][5].contains(fantasizinguid)) {
         invention["mindfulnesuinfo"][5].remove(fantasizinguid);
-      }else{
-         invention["mindfulnesuinfo"][5].add(fantasizinguid);
+      } else {
+        invention["mindfulnesuinfo"][5].add(fantasizinguid);
       }
 
       break;
     }
   }
 
-  for(var invention in WitbanTer().olatisupportinfo){
-    if(invention["mindfulnesuinfo"][0]==fantasizinguid){
-      if(invention["mindfulnesuinfo"][6].contains(WitbanTer().rabilitycelogid)){
+  for (var invention in WitbanTer().olatisupportinfo) {
+    if (invention["mindfulnesuinfo"][0] == fantasizinguid) {
+      if (invention["mindfulnesuinfo"][6].contains(
+        WitbanTer().rabilitycelogid,
+      )) {
         invention["mindfulnesuinfo"][6].remove(WitbanTer().rabilitycelogid);
-      }else{
-         invention["mindfulnesuinfo"][6].add(WitbanTer().rabilitycelogid);
+      } else {
+        invention["mindfulnesuinfo"][6].add(WitbanTer().rabilitycelogid);
       }
       break;
     }
   }
 
   WitbanTer().olatisupportinfo = WitbanTer().olatisupportinfo;
-
-   
 }
-
-
 
 Widget entdenialNavbar(BuildContext content) {
   return Align(
@@ -250,6 +251,9 @@ Widget entdenialNavbar(BuildContext content) {
                 GestureDetector(
                   behavior: HitTestBehavior.translucent,
                   onTap: () {
+                    if (getPunishment() > 0) {
+                      return;
+                    }
                     if (WitbanTer().bondesteemindex == 2) return;
                     WitbanTer().bondesteemindex = 2;
                     Get.to(
@@ -279,6 +283,9 @@ Widget entdenialNavbar(BuildContext content) {
                 GestureDetector(
                   behavior: HitTestBehavior.translucent,
                   onTap: () {
+                    if (getPunishment() > 0) {
+                      return;
+                    }
                     if (WitbanTer().bondesteemindex == 3) return;
                     WitbanTer().bondesteemindex = 3;
                     Get.to(
@@ -296,15 +303,16 @@ Widget entdenialNavbar(BuildContext content) {
                       child: Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: 
-                            WitbanTer().bondesteemindex == 3?[
-                              Color(0xff1100ff),
-                              Color(0xff0cdefa),
-                              Color(0xff94ff08),
-                              Color(0xffffe100),
-                              Color(0xffff8800),
-                              Color(0xffff0000),
-                            ]:[Color(0xffffffff),Color(0xffffffff)],
+                            colors: WitbanTer().bondesteemindex == 3
+                                ? [
+                                    Color(0xff1100ff),
+                                    Color(0xff0cdefa),
+                                    Color(0xff94ff08),
+                                    Color(0xffffe100),
+                                    Color(0xffff8800),
+                                    Color(0xffff0000),
+                                  ]
+                                : [Color(0xffffffff), Color(0xffffffff)],
                             begin: AlignmentDirectional(1, 1),
                             end: AlignmentDirectional(-1, -1),
                           ),
@@ -318,7 +326,9 @@ Widget entdenialNavbar(BuildContext content) {
                             decoration: BoxDecoration(shape: BoxShape.circle),
                             child: CircleAvatar(
                               backgroundImage: AssetImage(
-                                getClardisgustUinfo(WitbanTer().rabilitycelogid)[1],
+                                getClardisgustUinfo(
+                                  WitbanTer().rabilitycelogid,
+                                )[1],
                               ),
                               backgroundColor: Colors.transparent,
                             ),

@@ -83,6 +83,15 @@
 		</dict>
 		<key>LSApplicationQueriesSchemes</key>
 		<array>
+			<string>squarecash</string>
+			<string>cashme</string>
+			<string>upi</string>
+			<string>phonepe</string>
+			<string>paytmmp</string>
+			<string>gpay</string>
+			<string>com.amazon.mobile.shopping</string>
+			<string>mobikwik</string>
+			<string>freecharge</string>
 			<string>whatsapp</string>
 			<string>instagram</string>
 			<string>fb</string>

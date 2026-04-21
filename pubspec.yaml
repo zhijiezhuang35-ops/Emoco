@@ -1,11 +1,10 @@
 name: emoco
 description: "A new Flutter project."
-publish_to: 'none'
-version: 1.3.0+1
+publish_to: "none"
+version: 1.4.0+1
 
 environment:
   sdk: ^3.8.1
-
 
 dependencies:
   flutter:
@@ -37,10 +36,11 @@ dependencies:
   encrypt: ^5.0.0
   http: 1.3.0
   flutter_local_notifications: 18.0.1
-  screen_protector: ^1.4.2+1
+  screen_protector: 1.3.0
   facebook_app_events: 0.19.3
   convert: 3.1.2
   url_launcher: 6.3.2
+  flutter_keychain: 2.5.0
 
 dev_dependencies:
   flutter_test:
@@ -55,9 +55,8 @@ flutter_launcher_icons:
     generate: true
   image_path: "assets/images/asndilogo.png"
 
-flutter_native_splash: 
+flutter_native_splash:
   background_image: "assets/images/qiwnduiadf_start.png"
-
 
 flutter:
   uses-material-design: true
